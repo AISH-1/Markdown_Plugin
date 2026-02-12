@@ -40,5 +40,4 @@ A customized Dify plugin focused on 4 tools only:
 
 ## Notes
 - This repository has been intentionally trimmed to only the 4 tools above.
-- Any old references to removed tools were cleaned.
 
