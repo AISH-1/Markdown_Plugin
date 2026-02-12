@@ -1,0 +1,46 @@
+identity:
+  name: markdown_2_xlsx
+  author: Aish
+  label:
+    en_US: Markdown 2 XLSX
+description:
+  human:
+    en_US: Generate XLSX file from Markdown tables
+  llm: Generate XLSX file from Markdown tables
+parameters:
+  - name: md_text
+    type: string
+    required: true
+    label:
+      en_US: Markdown table text
+    human_description:
+      en_US: Input text of single or multiple Markdown tables. Heading text can be used as worksheet names.
+    form: llm
+  - name: force_text_value
+    type: select
+    required: true
+    default: "true"
+    options:
+      - value: "true"
+        label:
+          en_US: "Yes"
+      - value: "false"
+        label:
+          en_US: "No"
+    label:
+      en_US: Enforce text type
+    human_description:
+      en_US: Convert cell values to text type to avoid precision/display issues.
+    llm_description: Whether to convert cell values into string type, default is true.
+    form: form
+  - name: output_filename
+    type: string
+    required: false
+    label:
+      en_US: Output Filename
+    human_description:
+      en_US: Optional custom output file name. The suffix is optional.
+    form: llm
+extra:
+  python:
+    source: tools/md_to_xlsx/md_to_xlsx.py

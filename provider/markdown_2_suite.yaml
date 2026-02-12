@@ -1,0 +1,17 @@
+identity:
+  author: Aish
+  name: markdown_2_suite
+  label:
+    en_US: Markdown 2 Suite
+  description:
+    en_US: Export Markdown to DOCX, CSV, PDF, and XLSX files.
+  icon: icon.svg
+tools:
+  - tools/md_to_docx/md_to_docx.yaml
+  - tools/md_to_csv/md_to_csv.yaml
+  - tools/md_to_pdf/md_to_pdf.yaml
+  - tools/md_to_xlsx/md_to_xlsx.yaml
+extra:
+  python:
+    source: provider/markdown_2_suite.py
+

@@ -1,0 +1,29 @@
+identity:
+  name: markdown_2_csv
+  author: Aish
+  label:
+    en_US: Markdown 2 CSV
+description:
+  human:
+    en_US: Generate CSV file from Markdown tables
+  llm: Generate CSV file from Markdown tables
+parameters:
+  - name: md_text
+    type: string
+    required: true
+    label:
+      en_US: Markdown table text
+    human_description:
+      en_US: Input text of single or multiple Markdown tables.
+    form: llm
+  - name: output_filename
+    type: string
+    required: false
+    label:
+      en_US: Output Filename
+    human_description:
+      en_US: Optional custom output file name. The suffix is optional.
+    form: llm
+extra:
+  python:
+    source: tools/md_to_csv/md_to_csv.py

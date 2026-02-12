@@ -1,0 +1,33 @@
+[project]
+name = "markdown-2-suite"
+version = "3.4.0"
+description = "A Dify plugin and skill to convert Markdown into DOCX, CSV, PDF, and XLSX files."
+license = "Apache-2.0"
+requires-python = ">=3.11"
+authors = [
+    { name = "Aish" },
+]
+readme = "README.md"
+
+dependencies = [
+    "dify_plugin~=0.7.1",
+    "markdown>=3.10.2",
+    "pandas[excel,html,xml]~=3.0.0",
+    "xhtml2pdf~=0.2.17",
+    "pypandoc-binary~=1.16.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "ruff>=0.14.11",
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+exclude = ["dev", "provider", "test", "test_output"]
+
+[tool.setuptools.package-data]
+"*" = ["assets/template/docx_template.docx"]

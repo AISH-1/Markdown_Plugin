@@ -1,0 +1,38 @@
+identity:
+  name: markdown_2_docx
+  author: Aish
+  label:
+    en_US: Markdown 2 DOCX
+description:
+  human:
+    en_US: Generate DOCX file from Markdown text
+  llm: Generate DOCX file from Markdown text
+parameters:
+  - name: md_text
+    type: string
+    required: true
+    label:
+      en_US: Markdown text
+    human_description:
+      en_US: Markdown text
+    form: llm
+  - name: docx_template_file
+    type: file
+    required: false
+    label:
+      en_US: DOCX Template File
+    human_description:
+      en_US: Optional DOCX template file for styling.
+    llm_description: Optional DOCX template file for the generated document.
+    form: llm
+  - name: output_filename
+    type: string
+    required: false
+    label:
+      en_US: Output Filename
+    human_description:
+      en_US: Optional custom output file name. The suffix is optional.
+    form: llm
+extra:
+  python:
+    source: tools/md_to_docx/md_to_docx.py

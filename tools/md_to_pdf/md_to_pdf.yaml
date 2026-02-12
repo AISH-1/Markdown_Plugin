@@ -1,0 +1,29 @@
+identity:
+  name: markdown_2_pdf
+  author: Aish
+  label:
+    en_US: Markdown 2 PDF
+description:
+  human:
+    en_US: Generate PDF file from Markdown text
+  llm: Generate PDF file from Markdown text
+parameters:
+  - name: md_text
+    type: string
+    required: true
+    label:
+      en_US: Markdown text
+    human_description:
+      en_US: Markdown text
+    form: llm
+  - name: output_filename
+    type: string
+    required: false
+    label:
+      en_US: Output Filename
+    human_description:
+      en_US: Optional custom output file name. The suffix is optional.
+    form: llm
+extra:
+  python:
+    source: tools/md_to_pdf/md_to_pdf.py
